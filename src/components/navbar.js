@@ -9,7 +9,7 @@ const Navbar = (props) => {
   return (
     <div className={`navbar-navbar ${props.rootClassName} `}>
       <div className="navbar-home">
-        <Link to="/" className="navbar-navlink">
+        <Link to="/benchmark/" className="navbar-navlink">
           <img
             src={props.homeIcon}
             alt={props.homeAlt}
@@ -18,7 +18,7 @@ const Navbar = (props) => {
         </Link>
       </div>
       <div className="navbar-plus">
-        <Link to="/add" className="navbar-navlink1">
+        <Link to="/benchmark/add" className="navbar-navlink1">
           <img
             src={props.addIcon}
             alt={props.addAlt}
@@ -27,7 +27,7 @@ const Navbar = (props) => {
         </Link>
       </div>
       <div className="navbar-likes">
-        <Link to="/likes" className="navbar-navlink2">
+        <Link to="/benchmark/likes" className="navbar-navlink2">
           <img
             src={props.heartIcon}
             alt={props.heartAlt}

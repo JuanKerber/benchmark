@@ -8,10 +8,10 @@ import './topbar.css'
 const Topbar = (props) => {
   return (
     <div className={`topbar-topbar ${props.rootClassName} `}>
-      <Link to="/" className="topbar-navlink">
+      <Link to="/benchmark/" className="topbar-navlink">
         <h1 className="topbar-title">{props.title}</h1>
       </Link>
-      <Link to="/params" className="topbar-navlink1">
+      <Link to="/benchmark/params" className="topbar-navlink1">
         <img
           src={props.params}
           alt={props.paramsAlt}

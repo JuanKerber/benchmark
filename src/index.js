@@ -9,19 +9,22 @@ import {
 import './style.css'
 import Home from './views/home'
 import Likes from './views/likes'
-import Page from './views/page'
+import Page404 from './views/page'
 import Params from './views/params'
 import Add from './views/add'
+import Layout from "./views/layout";
 
 const App = () => {
   return (
     <Router>
       <Routes>
-        <Route element={<Home/>} exact path="/" />
-        <Route element={<Likes/>} exact path="/likes" />
-        <Route element={<Page/>} path="*/*" />
-        <Route element={<Params/>} exact path="/params" />
-        <Route element={<Add/>} exact path="/add" />
+        <Route path="/benchmark/" element={<Layout />}>
+          <Route index element={<Home/>} />
+          <Route element={<Likes/>} path="/benchmark/likes" />
+          <Route element={<Page404/>} path="*" />
+          <Route element={<Params/>} path="/benchmark/params" />
+          <Route element={<Add/>} path="/benchmark/add" />
+        </Route>
       </Routes>
     </Router>
   )
