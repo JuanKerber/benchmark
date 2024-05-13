@@ -1,17 +1,18 @@
 import React from 'react'
 
 import { Helmet } from 'react-helmet'
-
+import Map from '../components/map.js';
 import './home.css'
+
 
 const Home = (props) => {
   return (
-    <div>
+    <div className="map-div">
       <Helmet>
         <title>benchmark.</title>
         <meta property="og:title" content="benchmark." />
       </Helmet>
-        <h1>Home</h1>
+        <div id="map"><Map/></div>
     </div>
   )
 }

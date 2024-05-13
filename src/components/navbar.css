@@ -18,7 +18,7 @@
 }
 .navbar-image {
   width: 8vw;
-  max-width: 40%;
+  max-width: 80%;
   object-fit: cover;
 }
 .navbar-plus {
@@ -32,7 +32,7 @@
 }
 .navbar-image1 {
   width: 8vw;
-  max-width: 40%;
+  max-width: 80%;
   object-fit: cover;
 }
 .navbar-likes {
@@ -45,6 +45,6 @@
 }
 .navbar-image2 {
   width: 8vw;
-  max-width: 40%;
+  max-width: 80%;
   object-fit: cover;
 }
