@@ -1,0 +1,21 @@
+.add-container {
+  width: 100%;
+  display: flex;
+  overflow: auto;
+  min-height: 100vh;
+  align-items: center;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+.add-form {
+  top: 187px;
+  left: 0px;
+  right: 0px;
+  width: 1279px;
+  height: 627px;
+  margin: auto;
+  display: flex;
+  position: absolute;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
