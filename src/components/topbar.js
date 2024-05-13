@@ -11,7 +11,13 @@ const Topbar = (props) => {
       <Link to="/" className="topbar-navlink">
         <h1 className="topbar-title">{props.title}</h1>
       </Link>
-      <img src={props.params} alt={props.paramsAlt} className="topbar-image" />
+      <Link to="/params" className="topbar-navlink1">
+        <img
+          src={props.params}
+          alt={props.paramsAlt}
+          className="topbar-image"
+        />
+      </Link>
     </div>
   )
 }

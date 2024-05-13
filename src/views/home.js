@@ -14,7 +14,9 @@ const Home = (props) => {
         <meta property="og:title" content="benchmark." />
       </Helmet>
       <Topbar rootClassName="topbar-root-class-name"></Topbar>
-      <div id="map" className="home-map"></div>
+      <div className="general-div">
+        <h1>Home</h1>
+      </div>
       <Navbar rootClassName="navbar-root-class-name"></Navbar>
     </div>
   )

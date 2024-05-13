@@ -14,6 +14,9 @@ const Params = (props) => {
         <meta property="og:title" content="Params - benchmark." />
       </Helmet>
       <Topbar rootClassName="topbar-root-class-name4"></Topbar>
+      <div className="general-div">
+        <h1>Params</h1>
+      </div>
       <Navbar></Navbar>
     </div>
   )

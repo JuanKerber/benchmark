@@ -1,8 +1,9 @@
 .topbar-topbar {
+  flex: 1;
+  height: 10%;
+  position: static;
   width: 100%;
-  height: 86px;
   display: flex;
-  position: relative;
   align-items: center;
   flex-shrink: 0;
   justify-content: flex-end;
@@ -20,34 +21,8 @@
   text-decoration: none;
 }
 .topbar-image {
-  width: 10%;
+  width: 8vw;
+  max-width: 40%;
   object-fit: cover;
   margin-right: 3vw;
-}
-.topbar-root-class-name {
-  top: 0px;
-  flex: 1;
-  left: 0px;
-  height: 10%;
-  position: static;
-}
-.topbar-root-class-name1 {
-  top: 0px;
-  left: 0px;
-  position: absolute;
-}
-.topbar-root-class-name2 {
-  top: 0px;
-  left: 0px;
-  position: absolute;
-}
-.topbar-root-class-name3 {
-  top: 0px;
-  left: 0px;
-  position: absolute;
-}
-.topbar-root-class-name4 {
-  top: 0px;
-  left: 0px;
-  position: absolute;
 }

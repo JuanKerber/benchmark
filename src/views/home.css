@@ -1,5 +1,5 @@
 .home-container {
-  width: 100%;
+  width: 100vw;
   height: 100vh;
   display: flex;
   overflow: auto;
@@ -8,7 +8,7 @@
   flex-direction: column;
   justify-content: center;
 }
-.home-map {
+.general-div {
   width: 100%;
   flex-grow: 8;
   align-items: center;

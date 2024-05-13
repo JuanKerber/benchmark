@@ -3,8 +3,7 @@ import ReactDOM from 'react-dom'
 import {
   BrowserRouter as Router,
   Route,
-  Switch,
-  Redirect,
+  Routes
 } from 'react-router-dom'
 
 import './style.css'
@@ -17,14 +16,13 @@ import Add from './views/add'
 const App = () => {
   return (
     <Router>
-      <Switch>
-        <Route component={Home} exact path="/" />
-        <Route component={Likes} exact path="/likes" />
-        <Route component={Page} path="**" />
-        <Route component={Params} exact path="/params" />
-        <Route component={Add} exact path="/add" />
-        <Redirect to="**" />
-      </Switch>
+      <Routes>
+        <Route element={<Home/>} exact path="/" />
+        <Route element={<Likes/>} exact path="/likes" />
+        <Route element={<Page/>} path="*/*" />
+        <Route element={<Params/>} exact path="/params" />
+        <Route element={<Add/>} exact path="/add" />
+      </Routes>
     </Router>
   )
 }

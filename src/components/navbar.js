@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 import PropTypes from 'prop-types'
 
@@ -8,21 +9,31 @@ const Navbar = (props) => {
   return (
     <div className={`navbar-navbar ${props.rootClassName} `}>
       <div className="navbar-home">
-        <img
-          src={props.homeIcon}
-          alt={props.homeAlt}
-          className="navbar-image"
-        />
+        <Link to="/" className="navbar-navlink">
+          <img
+            src={props.homeIcon}
+            alt={props.homeAlt}
+            className="navbar-image"
+          />
+        </Link>
       </div>
       <div className="navbar-plus">
-        <img src={props.addIcon} alt={props.addAlt} className="navbar-image1" />
+        <Link to="/add" className="navbar-navlink1">
+          <img
+            src={props.addIcon}
+            alt={props.addAlt}
+            className="navbar-image1"
+          />
+        </Link>
       </div>
       <div className="navbar-likes">
-        <img
-          src={props.heartIcon}
-          alt={props.heartAlt}
-          className="navbar-image2"
-        />
+        <Link to="/likes" className="navbar-navlink2">
+          <img
+            src={props.heartIcon}
+            alt={props.heartAlt}
+            className="navbar-image2"
+          />
+        </Link>
       </div>
     </div>
   )

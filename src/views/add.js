@@ -14,8 +14,10 @@ const Add = (props) => {
         <meta property="og:title" content="Add - benchmark." />
       </Helmet>
       <Topbar rootClassName="topbar-root-class-name2"></Topbar>
-      <form className="add-form"></form>
-      <Navbar></Navbar>
+      <div className="general-div">
+        <h1>add</h1>
+      </div>
+      <Navbar rootClassName="navbar-root-class-name1"></Navbar>
     </div>
   )
 }

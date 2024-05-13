@@ -13,7 +13,10 @@ const Likes = (props) => {
         <title>Likes - benchmark.</title>
         <meta property="og:title" content="Likes - benchmark." />
       </Helmet>
-      <Topbar rootClassName="topbar-root-class-name3"></Topbar>
+      <Topbar></Topbar>
+      <div className="general-div">
+        <h1>likes</h1>
+      </div>
       <Navbar></Navbar>
     </div>
   )
