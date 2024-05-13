@@ -41,11 +41,11 @@ const Navbar = (props) => {
 
 Navbar.defaultProps = {
   rootClassName: '',
-  homeIcon: '/home_icon.svg',
+  homeIcon: '/assets/home_icon.svg',
   homeAlt: 'Home',
-  heartIcon: '/heart_icon.svg',
+  heartIcon: '/assets/heart_icon.svg',
   heartAlt: 'Likes',
-  addIcon: '/plus_icon.svg',
+  addIcon: '/assets/plus_icon.svg',
   addAlt: 'Add',
 }
 

@@ -25,7 +25,7 @@ const Topbar = (props) => {
 Topbar.defaultProps = {
   title: 'benchmark.',
   rootClassName: '',
-  params: '/params_icon.svg',
+  params: '/assets/params_icon.svg',
   paramsAlt: 'Parameters',
 }
 
