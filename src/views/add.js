@@ -4,6 +4,8 @@ import { Helmet } from 'react-helmet'
 
 import './add.css'
 
+import Marker from '../components/marker.js';
+
 const Add = (props) => {
   return (
     <div>
@@ -12,7 +14,8 @@ const Add = (props) => {
         <meta property="og:title" content="Add - benchmark." />
       </Helmet>
       
-        <h1>Add</h1>
+        <Marker/>
+        
 
     </div>
   )

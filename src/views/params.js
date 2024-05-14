@@ -4,6 +4,7 @@ import { Helmet } from 'react-helmet'
 
 import './params.css'
 
+
 const Params = (props) => {
   return (
     <div className="params-container">
@@ -12,7 +13,7 @@ const Params = (props) => {
         <meta property="og:title" content="Params - benchmark." />
       </Helmet>
       
-        <h1>Params</h1>
+        
     </div>
   )
 }
