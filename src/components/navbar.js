@@ -30,7 +30,6 @@ const Navbar = () => {
   
   onChange={(event, newValue) => {
     setValue(newValue);
-    console.log(localStorage.getItem('PageNb'));
   }}
 >
   <BottomNavigationAction component={Link} to="/benchmark/"  label="Home" icon={<HomeRounded />} />

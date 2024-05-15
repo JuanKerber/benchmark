@@ -1,6 +1,7 @@
 import "./marker.css";
 import React, { useState, useEffect } from 'react';
 import {collection, addDoc} from "firebase/firestore";
+import { getStorage, ref } from "firebase/storage";
 import {db} from "../firebaseconfig"
 
 // import * as maptilersdk from '@maptiler/sdk';
@@ -53,11 +54,15 @@ const Marker = () => {
             console.error("Form is empty");
         }
     }
-    //  //map init
-    //  const mapContainer = useRef(null);
-    //  const map = useRef(null);
-    //  maptilersdk.config.apiKey = 'uGrMXdZEwtfsaCiOxVBr';
-   
+    //add image
+    const addimagetocloud = async (e) => {
+        e.preventDefault(); 
+        const storage = getStorage();
+        console.log(HTMLInputElement.files);
+        const mountainsRef = ref(storage, 'mountains.jpg');
+      }
+    
+
     useEffect(()=>{
 
         if (navigator.geolocation) {
@@ -75,14 +80,6 @@ const Marker = () => {
         } else {
             console.log("Geolocation is not supported by this browser.");
         }
-
-        // if (map.current) return; // stops map from intializing more than once
-  
-        //     map.current = new maptilersdk.Map({
-        //     container: mapContainer.current,
-        //     style: maptilersdk.MapStyle.OUTDOOR,
-        //     geolocate: maptilersdk.GeolocationType.POINT
-        //     });
 
     })
  
@@ -108,6 +105,13 @@ const Marker = () => {
                             onChange={(e)=>setdesc(e.target.value)}
                             required
                         />
+                        {/* <label>Select an image:</label>
+                        <input
+                            type="file"
+                            accept="image/*"
+                            capture="camera"
+                            required
+                        /> */}
                     
                         <Button
                             type="submit"
@@ -116,9 +120,20 @@ const Marker = () => {
                             Submit
                         </Button>
                     </form>
-                    {/* <div className="map-wrap">
-                        <div ref={mapContainer} className="map" />
-                    </div> */}
+                    {/* <form onSubmit={addimagetocloud}>
+                    <input
+                            type="file"
+                            accept="image/*"
+                            capture="camera"
+                            required
+                        />
+                    <Button
+                            type="submit"
+                            variant="contained"
+                        >
+                            Add image
+                        </Button>
+                    </form> */}
                 </div>
             </div>
         </section>
