@@ -4,37 +4,29 @@ import { Link } from 'react-router-dom'
 
 import './navbar.css'
 
-const Navbar = (props) => {
+import Box from '@mui/material/Box';
+import BottomNavigation from '@mui/material/BottomNavigation';
+import BottomNavigationAction from '@mui/material/BottomNavigationAction';
+import { HomeRounded, FavoriteRounded, AddLocationRounded } from '@mui/icons-material';
+
+const Navbar = () => {
+
+  const [value, setValue] = React.useState(0);
   return (
-    <div className={`navbar-navbar ${props.rootClassName} `}>
-      <div className="navbar-home">
-        <Link to="/benchmark/" className="navbar-navlink">
-          <img
-            src={process.env.PUBLIC_URL + '/assets/home_icon.svg'}
-            alt='Home'
-            className="navbar-image"
-          />
-        </Link>
-      </div>
-      <div className="navbar-plus">
-        <Link to="/benchmark/add" className="navbar-navlink1">
-          <img
-            src={process.env.PUBLIC_URL + '/assets/plus_icon.svg'}
-            alt='Add'
-            className="navbar-image1"
-          />
-        </Link>
-      </div>
-      <div className="navbar-likes">
-        <Link to="/benchmark/likes" className="navbar-navlink2">
-          <img
-            src={process.env.PUBLIC_URL + '/assets/heart_icon.svg'}
-            alt='Likes'
-            className="navbar-image2"
-          />
-        </Link>
-      </div>
-    </div>
+  <BottomNavigation
+  sx={{
+    width: "100%",
+    mx: "auto"
+  }}
+  value={value}
+  onChange={(event, newValue) => {
+    setValue(newValue);
+  }}
+>
+  <BottomNavigationAction component={Link} to="/benchmark/"  label="Home" icon={<HomeRounded />} />
+  <BottomNavigationAction component={Link} to="/benchmark/add" label="Add" icon={<AddLocationRounded />} />
+  <BottomNavigationAction component={Link} to="/benchmark/likes" label="Favorites" icon={<FavoriteRounded />} />
+</BottomNavigation>
   )
 }
 

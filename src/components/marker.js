@@ -5,7 +5,8 @@ import {db} from "../firebaseconfig"
 
 import * as maptilersdk from '@maptiler/sdk';
 import "@maptiler/sdk/dist/maptiler-sdk.css";
- 
+
+import Button from '@mui/material/Button';
  
 const Marker = () => {
 
@@ -109,13 +110,13 @@ const Marker = () => {
                     </div>
                     </form>
                     <div className="btn-container">
-                        <button
+                        <Button
                             type="submit"
-                            className="btn"
+                            variant="contained"
                             onClick={addMarker}
                         >
                             Submit
-                        </button>
+                        </Button>
                     </div>
                     {/* <div className="map-wrap">
                         <div ref={mapContainer} className="map" />

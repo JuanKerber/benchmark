@@ -13,9 +13,7 @@
 }
 .topbar-title {
   top: 19px;
-  fill: var(--dl-color-theme-secondary1);
   left: 11px;
-  color: var(--dl-color-theme-secondary1);
   position: absolute;
   align-self: flex-start;
   text-decoration: none;

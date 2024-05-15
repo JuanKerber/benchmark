@@ -12,7 +12,7 @@ const Home = (props) => {
         <title>benchmark.</title>
         <meta property="og:title" content="benchmark." />
       </Helmet>
-        <div id="map"><Map/></div>
+        <div id="map" className="map-div2"><Map/></div>
     </div>
   )
 }

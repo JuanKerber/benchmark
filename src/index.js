@@ -6,7 +6,6 @@ import {
   Routes
 } from 'react-router-dom'
 
-import './style.css'
 import Home from './views/home'
 import Likes from './views/likes'
 import Page404 from './views/page'
@@ -14,9 +13,15 @@ import Params from './views/params'
 import Add from './views/add'
 import Layout from "./views/layout";
 
+import { ThemeProvider } from "@mui/material";
+ 
+import { Theme } from "./theme";
+
 const App = () => {
   return (
-    <Router>
+    <ThemeProvider theme={Theme}>
+      
+      <Router>
       <Routes>
         <Route path="/benchmark/" element={<Layout />}>
           <Route index element={<Home/>} />
@@ -27,6 +32,10 @@ const App = () => {
         </Route>
       </Routes>
     </Router>
+    
+    </ThemeProvider>
+
+    
   )
 }
 

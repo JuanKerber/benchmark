@@ -5,6 +5,6 @@
 }
 .map-div {
     width: 100%;
-    align-items: center;
-    justify-content: center;
+    height: 100%;
+    display: flex;
   }
