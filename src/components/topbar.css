@@ -21,7 +21,6 @@
   text-decoration: none;
 }
 .topbar-image {
-  width: 8vw;
+  height: 50%;
   object-fit: cover;
-  margin-right: 3vw;
 }
