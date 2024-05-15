@@ -48,3 +48,9 @@
   max-width: 80%;
   object-fit: cover;
 }
+.Mui-selected {
+  color: #d6a266
+}
+.MuiBottomNavigationAction-root.Mui-selected {
+  color: #d6a266 !important
+}

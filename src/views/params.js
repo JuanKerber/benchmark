@@ -13,6 +13,8 @@ const Params = (props) => {
         <meta property="og:title" content="Params - benchmark." />
       </Helmet>
       
+      <h1>Settings
+      </h1>
         
     </div>
   )

@@ -1,10 +1,10 @@
 import "./marker.css";
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect } from 'react';
 import {collection, addDoc} from "firebase/firestore";
 import {db} from "../firebaseconfig"
 
-import * as maptilersdk from '@maptiler/sdk';
-import "@maptiler/sdk/dist/maptiler-sdk.css";
+// import * as maptilersdk from '@maptiler/sdk';
+// import "@maptiler/sdk/dist/maptiler-sdk.css";
 
 import Button from '@mui/material/Button';
  
@@ -23,10 +23,6 @@ const Marker = () => {
 
     function success(pos) {
         var crd = pos.coords;
-        console.log("Your current position is:");
-        console.log(`Latitude : ${crd.latitude}`);
-        console.log(`Longitude: ${crd.longitude}`);
-        console.log(`More or less ${crd.accuracy} meters.`);
         setlatitude(crd.latitude);
         setlongitude(crd.longitude);
       }
@@ -37,21 +33,26 @@ const Marker = () => {
  
     const addMarker = async (e) => {
         e.preventDefault();  
-       
-        try {
-            const docRef = await addDoc(collection(db, "markers"), {
-              latitude:latitude,
-              longitude:longitude,
-              desc:desc,
-              name:name
-            });
-            console.log("Document written with ID: ", docRef.id);
-          } catch (e) {
-            console.error("Error adding document: ", e);
-          }
-          document.getElementById('myForm').reset();
+       if (name !== "" && desc !== ""){
+            try {
+                
+                const docRef = await addDoc(collection(db, "markers"), {
+                latitude:latitude,
+                longitude:longitude,
+                desc:desc,
+                name:name
+                });
+                console.log("Document written with ID: ", docRef.id);  
+                
+                
+            } catch (e) {
+                console.error("Error adding document: ", e);
+            }
+            document.getElementById('myForm').reset();
+        } else {
+            console.error("Form is empty");
+        }
     }
- 
     //  //map init
     //  const mapContainer = useRef(null);
     //  const map = useRef(null);
@@ -63,7 +64,6 @@ const Marker = () => {
             navigator.permissions
             .query({ name: "geolocation" })
             .then(function (result) {
-                console.log(result);
                 if (result.state === "granted") {
                     navigator.geolocation.getCurrentPosition(success, errors, options);
                 } else if (result.state === "prompt") {
@@ -91,33 +91,31 @@ const Marker = () => {
         <section className="marker-container">
             <div className="marker">
                 <h1 className="header">
-                    Add a marker
+                    Add a bench marker.
                 </h1>
                 
                 <div>
-                <form id="myForm">
-                    <div>
+                <form id="myForm" onSubmit={addMarker}>
                         <input
                             type="text"
                             placeholder="Name"
                             onChange={(e)=>setname(e.target.value)}
+                            required
                         />
                         <input
                             type="text"
                             placeholder="Description"
                             onChange={(e)=>setdesc(e.target.value)}
+                            required
                         />
-                    </div>
-                    </form>
-                    <div className="btn-container">
+                    
                         <Button
                             type="submit"
                             variant="contained"
-                            onClick={addMarker}
                         >
                             Submit
                         </Button>
-                    </div>
+                    </form>
                     {/* <div className="map-wrap">
                         <div ref={mapContainer} className="map" />
                     </div> */}

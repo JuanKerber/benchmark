@@ -1,10 +1,9 @@
-import React from 'react'
+import React, {useEffect} from 'react'
 import { Link } from 'react-router-dom'
 
 
 import './navbar.css'
 
-import Box from '@mui/material/Box';
 import BottomNavigation from '@mui/material/BottomNavigation';
 import BottomNavigationAction from '@mui/material/BottomNavigationAction';
 import { HomeRounded, FavoriteRounded, AddLocationRounded } from '@mui/icons-material';
@@ -12,6 +11,15 @@ import { HomeRounded, FavoriteRounded, AddLocationRounded } from '@mui/icons-mat
 const Navbar = () => {
 
   const [value, setValue] = React.useState(0);
+
+  useEffect(() => {
+    setValue(JSON.parse(window.sessionStorage.getItem("PageNb")));
+  }, []);
+
+  useEffect(() => {
+    window.sessionStorage.setItem("PageNb", value);
+  }, [value]);
+
   return (
   <BottomNavigation
   sx={{
@@ -19,8 +27,10 @@ const Navbar = () => {
     mx: "auto"
   }}
   value={value}
+  
   onChange={(event, newValue) => {
     setValue(newValue);
+    console.log(localStorage.getItem('PageNb'));
   }}
 >
   <BottomNavigationAction component={Link} to="/benchmark/"  label="Home" icon={<HomeRounded />} />
