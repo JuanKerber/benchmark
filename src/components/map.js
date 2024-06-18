@@ -5,7 +5,7 @@ import './map.css';
 import GeoJSON from 'geojson'
 import {db} from "../firebaseconfig"
 import { collection, getDocs } from "firebase/firestore";
-
+import Rating from '@mui/material/Rating';
 export default function Map() {
 // 6.115015,46.224919
 
@@ -15,6 +15,7 @@ export default function Map() {
     maptilersdk.config.apiKey = 'uGrMXdZEwtfsaCiOxVBr';
 
     var markers = [];
+
 
 
     async function fetchData(){
@@ -31,7 +32,6 @@ export default function Map() {
       console.log(JSON);
     }
 
-
     function displayMarkers(geojson){
             // add markers to map
           geojson.features.forEach(function (marker) {
@@ -43,8 +43,9 @@ export default function Map() {
             el.style.width = '30px';
             el.style.height = '30px';
 
-            const description = '<strong>'+ marker.properties.name +'</strong><p>' + marker.properties.desc + '<p>'
 
+            const description = '<strong>'+ marker.properties.rating +'/5</strong></br><strong>'+ marker.properties.name +'</strong><p>' + marker.properties.desc + '</p>  <img src="' + marker.properties.url +'"width="100%" height="50%"></img>'
+            
             var popup = new maptilersdk.Popup({ offset: 25 }).setHTML(description);
 
             // add marker to map
@@ -75,5 +76,6 @@ useEffect( () => {
     <div className="map-wrap">
       <div ref={mapContainer} className="map" />
     </div>
+    
   );
 }

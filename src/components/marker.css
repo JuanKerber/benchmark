@@ -6,9 +6,32 @@
 .marker-container {
     display: flex;
     justify-content: center;
-    align-items: center;    
+    align-items: center;
 }
- 
+
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+#formName{
+    margin-bottom: 4px;
+}
+#formDesc{
+    margin-bottom: 4px;
+}
+#formStars{
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+#formSubmit{
+    margin-top: 20px;
+}
+#formUpload{
+    margin-bottom: 4px;
+}
+
 .header {
     font-size: 2.5rem;
     margin-bottom: 1rem;
